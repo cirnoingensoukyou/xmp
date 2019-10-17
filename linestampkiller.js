@@ -1,5 +1,4 @@
 
-
 const checkUrl = url =>
 {
     const aTag = $('<a href="' + url + '"></a>')[0];
@@ -21,5 +20,12 @@ const checkUrl = url =>
 const getZip = () =>
 {
     const line_url = document.form_0.line_url.value;
-    alert(checkUrl(line_url) ? 'TRUE' : 'FALSE');
+    if (!checkUrl(line_url))
+    {
+        alert('URL おかしい');
+        return;
+    }
+    
+
+
 };
