@@ -2,7 +2,7 @@
 
 const checkUrl = url =>
 {
-    let aTag = $('<a href="' + url + '"></a>');
+    let aTag = $('<a href="' + url + '"></a>')[0];
 
     let pathArr = aTag.pathname.split('/').filter(_ => _ !== '');
     if (pathArr.length < 3)
