@@ -17,6 +17,17 @@ const checkUrl = url =>
     return r;
 };
 
+const getProductId = url => 
+{
+    const r = url.match(/[0-9]+/);
+    return r ? r[0] : undefined;
+}
+
+const disHtml = res =>
+{
+    console.log(res);
+}
+
 const getZip = () =>
 {
     const line_url = document.form_0.line_url.value;
@@ -26,6 +37,17 @@ const getZip = () =>
         return;
     }
     
+    const productId = getProductId(line_url);
+    if (!productId)
+    {
+        alert('URL おかしい');
+        return;
+    }
 
-
+    $.ajax({
+        url: 'http://vps.issm.xyz/?m=h&id=' + productId,
+        type: 'GET',
+        success: disHtml,
+        error: () => alert('HTML 取得できなかった')
+    });
 };
