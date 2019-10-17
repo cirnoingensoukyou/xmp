@@ -45,7 +45,7 @@ const getZip = () =>
     }
 
     $.ajax({
-        url: 'http://vps.issm.xyz/?m=h&id=' + productId,
+        url: 'https://vps.issm.xyz:8443/?m=h&id=' + productId,
         type: 'GET',
         success: disHtml,
         error: () => alert('HTML 取得できなかった')
