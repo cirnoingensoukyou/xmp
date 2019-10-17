@@ -8,10 +8,11 @@ const checkUrl = url =>
     if (pathArr.length < 3)
         return false;
 
-    let r = aTag.protocol === 'https:' && 
+    let r = (aTag.protocol === 'https:' || aTag.protocol === 'http:') && 
         aTag.hostname === 'store.line.me' &&
         pathArr[0] === 'stickershop' &&
         pathArr[1] === 'product';
+    
     aTag.remove();
 
     return r;
