@@ -121,7 +121,7 @@
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `${eventValue}.zip`;
+                a.download = ($('p.mdCMN38Item01Ttl').text() || eventValue) + '.zip';
                 a.click();
             });
 
